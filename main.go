@@ -14,7 +14,6 @@ func main() {
 	ConfigRuntime()
 	StartWorkers()
 	StartGin()
-	testprivate.SecretProcess()
 }
 
 // ConfigRuntime sets the number of operating system threads.
@@ -22,6 +21,7 @@ func ConfigRuntime() {
 	nuCPU := runtime.NumCPU()
 	runtime.GOMAXPROCS(nuCPU)
 	fmt.Printf("Running with %d CPUs\n", nuCPU)
+	testprivate.SecretProcess()
 }
 
 // StartWorkers start starsWorker by goroutine.
