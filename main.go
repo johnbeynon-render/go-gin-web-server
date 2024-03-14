@@ -7,12 +7,14 @@ import (
 	"runtime"
 
 	"github.com/gin-gonic/gin"
+	"github.com/johnbeynon-render/testprivate-go"
 )
 
 func main() {
 	ConfigRuntime()
 	StartWorkers()
 	StartGin()
+	testprivate.SecretProcess()
 }
 
 // ConfigRuntime sets the number of operating system threads.
@@ -45,6 +47,6 @@ func StartGin() {
 		port = "8080"
 	}
 	if err := router.Run(":" + port); err != nil {
-        log.Panicf("error: %s", err)
+		log.Panicf("error: %s", err)
 	}
 }
